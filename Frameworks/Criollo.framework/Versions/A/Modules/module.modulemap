@@ -1,0 +1,6 @@
+framework module Criollo {
+  umbrella header "Criollo.h"
+
+  export *
+  module * { export * }
+}
