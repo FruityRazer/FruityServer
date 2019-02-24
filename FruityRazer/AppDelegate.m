@@ -285,7 +285,7 @@
                 
                 NSError *error = nil;
                 
-                if (d.synapse != synapse2)
+                if (d.synapse == synapse2)
                     [self handleSynapse2ReadWithDevice:d error:&error];
                 else
                     [response sendData:[NSJSONSerialization dataWithJSONObject:@{@"success": @false, @"error": @"NOT_SUPPORTED"} options:0 error:nil]];
