@@ -21,6 +21,7 @@
 		A04257C720F35F0000C1EB76 /* razercommon.c in Sources */ = {isa = PBXBuildFile; fileRef = A04257C220F35EFF00C1EB76 /* razercommon.c */; };
 		A04257C820F35F0000C1EB76 /* razerkbd_driver.c in Sources */ = {isa = PBXBuildFile; fileRef = A04257C420F35EFF00C1EB76 /* razerkbd_driver.c */; };
 		A04257CB20F35F5D00C1EB76 /* Criollo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A04257B420F35E9D00C1EB76 /* Criollo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A0B15E5A22414B6600C5F6C1 /* FRHyperflux.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B15E5922414B6600C5F6C1 /* FRHyperflux.m */; };
 		A0F2309220F969FC000F39F4 /* FRBaseStation.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F2309120F969FC000F39F4 /* FRBaseStation.m */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,8 @@
 		A04257C320F35EFF00C1EB76 /* razercommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = razercommon.h; sourceTree = "<group>"; };
 		A04257C420F35EFF00C1EB76 /* razerkbd_driver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = razerkbd_driver.c; sourceTree = "<group>"; };
 		A04257C520F35EFF00C1EB76 /* razerkbd_driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = razerkbd_driver.h; sourceTree = "<group>"; };
+		A0B15E5822414B6600C5F6C1 /* FRHyperflux.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRHyperflux.h; sourceTree = "<group>"; };
+		A0B15E5922414B6600C5F6C1 /* FRHyperflux.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRHyperflux.m; sourceTree = "<group>"; };
 		A0F2309020F969FC000F39F4 /* FRBaseStation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRBaseStation.h; sourceTree = "<group>"; };
 		A0F2309120F969FC000F39F4 /* FRBaseStation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRBaseStation.m; sourceTree = "<group>"; };
 		A0F2309320F96A39000F39F4 /* FRDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRDevice.h; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 				A0F2309320F96A39000F39F4 /* FRDevice.h */,
 				A0F2309020F969FC000F39F4 /* FRBaseStation.h */,
 				A0F2309120F969FC000F39F4 /* FRBaseStation.m */,
+				A0B15E5822414B6600C5F6C1 /* FRHyperflux.h */,
+				A0B15E5922414B6600C5F6C1 /* FRHyperflux.m */,
 				A02B9A1120F3BAE90073642E /* FRKeyboard.h */,
 				A02B9A1220F3BAE90073642E /* FRKeyboard.m */,
 				A02B9A1520F3BE060073642E /* FRRGB.h */,
@@ -190,6 +195,9 @@
 					A042579C20F35E6A00C1EB76 = {
 						CreatedOnToolsVersion = 9.4.1;
 						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -242,6 +250,7 @@
 				A04257BE20F35EFA00C1EB76 /* USBCommon.c in Sources */,
 				A04257A220F35E6A00C1EB76 /* AppDelegate.m in Sources */,
 				A04257C620F35F0000C1EB76 /* razerchromacommon.c in Sources */,
+				A0B15E5A22414B6600C5F6C1 /* FRHyperflux.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +374,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -388,6 +398,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",

@@ -37,11 +37,12 @@ typedef enum razer_synapse_version {
 } razer_synapse_version;
 
 typedef enum device_type {
+    headphones,
     keyboard,
     mouse,
-    headphones,
-    misc_mousepad,
-    misc_basestation
+    misc_basestation,
+    misc_hyperflux,
+    mousepad
 } razer_device_type;
 
 typedef struct razer_device {

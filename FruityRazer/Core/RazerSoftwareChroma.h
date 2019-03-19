@@ -40,4 +40,6 @@ IOReturn razer_base_station_pre(IOUSBDeviceInterface **dev);
 IOReturn razer_base_station_set_static_color(IOUSBDeviceInterface **dev, struct razer_rgb *rgb);
 IOReturn razer_base_station_set_colors(IOUSBDeviceInterface **dev, char *parts);
 
+IOReturn razer_hyperflux_set_colors(IOUSBDeviceInterface **dev, char *parts);
+
 #endif /* RazerSoftwareChroma_h */

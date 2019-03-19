@@ -35,6 +35,7 @@
 #import "RazerSoftwareChroma.h"
 
 #import "FRBaseStation.h"
+#import "FRHyperflux.h"
 #import "FRKeyboard.h"
 
 #define RAZER_DIRECTION_LEFT   0x31
@@ -166,8 +167,14 @@
             break;
         }
             
-        case misc_basestation: {
-            FRBaseStation *bs = [[FRBaseStation alloc] initWithDeviceInterface:dev];
+        case misc_basestation:
+        case misc_hyperflux: {
+            NSObject<FRDevice> *d = nil;
+            
+            if (device.type == misc_basestation)
+                d = [[FRBaseStation alloc] initWithDeviceInterface:dev];
+            else
+                d = [[FRHyperflux alloc] initWithDeviceInterface:dev];
             
             NSDictionary *data = request.body;
             
@@ -175,9 +182,9 @@
                 NSArray *parts = data[@"parts"];
                 
                 for (int i = 0; i < parts.count; i++)
-                    [bs setColor:[[FRRGB alloc] initWithHex:parts[i]] forPart:i];
+                    [(FRBaseStation *) d setColor:[[FRRGB alloc] initWithHex:parts[i]] forPart:i];
                 
-                [bs updateDeviceState];
+                [d updateDeviceState];
             }
             
             ret = true;

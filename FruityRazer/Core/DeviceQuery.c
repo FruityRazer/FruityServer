@@ -40,7 +40,14 @@ razer_device __DQ_DEVICES[] = {
         .fullName = "Razer Firefly",
         .usbId = 0x0C00,
         .synapse = synapse2,
-        .type = misc_mousepad
+        .type = mousepad
+    },
+    {
+        .shortName = "hyperflux",
+        .fullName = "Razer Mamba Hyperflux",
+        .usbId = 0x0068,
+        .synapse = synapse3,
+        .type = misc_hyperflux
     },
     {
         .shortName = "manowar",
@@ -123,7 +130,7 @@ bool dq_check_device_connected(int device_id) {
         }
         
         //Now create the device interface
-        result = (*plugInInterface)->QueryInterface(plugInInterface, CFUUIDGetUUIDBytes(kIOUSBDeviceInterfaceID), (LPVOID *)&dev);
+        result = (*plugInInterface)->QueryInterface(plugInInterface, CFUUIDGetUUIDBytes(kIOUSBDeviceInterfaceID650), (LPVOID *)&dev);
         
         //Don’t need the intermediate plug-in after device interface is created
         (*plugInInterface)->Release(plugInInterface);
@@ -194,7 +201,7 @@ IOUSBDeviceInterface** dq_get_device(int device_id) {
         }
         
         //Now create the device interface
-        result = (*plugInInterface)->QueryInterface(plugInInterface, CFUUIDGetUUIDBytes(kIOUSBDeviceInterfaceID), (LPVOID *)&dev);
+        result = (*plugInInterface)->QueryInterface(plugInInterface, CFUUIDGetUUIDBytes(kIOUSBDeviceInterfaceID650), (LPVOID *)&dev);
         
         //Don’t need the intermediate plug-in after device interface is created
         (*plugInInterface)->Release(plugInInterface);

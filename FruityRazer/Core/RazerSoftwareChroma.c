@@ -193,3 +193,25 @@ IOReturn razer_base_station_set_colors(IOUSBDeviceInterface **dev, char *parts) 
     
     return perform_razer_usb_call(dev, &report, 0x00);
 }
+
+IOReturn razer_hyperflux_set_colors(IOUSBDeviceInterface **dev, char *parts) {
+    struct razer_report report = get_razer_report(0x1f, 0x0f, 0x03, 0x38);
+    
+    report.arguments[0] = 0x00;
+    report.arguments[1] = 0x00;
+    report.arguments[2] = 0x00;
+    report.arguments[3] = 0x00;
+    report.arguments[4] = 0x10;
+    
+    for (int i = 0; i <= 14; i++) {
+        int part = (i * 3);
+        
+        report.arguments[5 + part + 0] = parts[part + 0];
+        report.arguments[5 + part + 1] = parts[part + 1];
+        report.arguments[5 + part + 2] = parts[part + 2];
+    }
+    
+    report.crc = razer_calculate_crc(&report);
+    
+    return perform_razer_usb_call(dev, &report, 0x00);
+}
