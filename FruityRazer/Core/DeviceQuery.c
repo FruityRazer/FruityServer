@@ -69,6 +69,13 @@ razer_device __DQ_DEVICES[] = {
         .usbId = 0x0F08,
         .synapse = synapse3,
         .type = misc_basestation
+    },
+    {
+        .shortName = "mamba_wireless",
+        .fullName = "Razer Mamba Wireless",
+        .usbId = 0x0072,
+        .synapse = synapse2,
+        .type = mouse
     }
 };
 
