@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
     IOUSBDeviceInterface **_dev;
 }
 
-- (instancetype)initWithDeviceInterface:(IOUSBDeviceInterface **)deviceInterface;
+- (instancetype)initWithDeviceInterface:(IOUSBDeviceInterface *_Nonnull *_Nonnull)deviceInterface;
 
 - (void)setColor:(FRRGB *)color;
 - (void)setColor:(FRRGB *)color forPart:(int)part;

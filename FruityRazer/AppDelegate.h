@@ -31,8 +31,7 @@
 @interface AppDelegate : NSObject <CRApplicationDelegate>
 
 @property (nonatomic, strong, nonnull) CRServer *server;
-
-@property (nonatomic, strong) NSString *key;
+@property (nonatomic, strong, nullable) NSString *key;
 
 @end
 

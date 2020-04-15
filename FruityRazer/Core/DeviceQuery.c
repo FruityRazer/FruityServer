@@ -27,7 +27,16 @@
 
 #import "DeviceQuery.h"
 
-razer_device __DQ_DEVICES[] = {
+razer_device __DQ_DEVICES_SYNAPSE_2[] = {
+    //  Headphones
+    {
+        .shortName = "manowar",
+        .fullName = "Razer ManO' War",
+        .usbId = 0x0A02,
+        .synapse = synapse2,
+        .type = headphones
+    },
+    //  Mice
     {
         .shortName = "mamba",
         .fullName = "Razer Mamba",
@@ -35,6 +44,7 @@ razer_device __DQ_DEVICES[] = {
         .synapse = synapse2,
         .type = mouse
     },
+    //  Mousepads
     {
         .shortName = "firefly",
         .fullName = "Razer Firefly",
@@ -42,6 +52,47 @@ razer_device __DQ_DEVICES[] = {
         .synapse = synapse2,
         .type = mousepad
     },
+    //  Keyboards
+    //  ...
+    {
+        .shortName = "blackwidow_ultimate_2012",
+        .fullName = "Razer BlackWidow Ultimate 2012",
+        .usbId = 0x0,
+        .synapse = synapse2,
+        .type = keyboard
+    },
+    {
+        .shortName = "blackwidow_stealth",
+        .fullName = "Razer BlackWidow Stealth",
+        .usbId = 0x0,
+        .synapse = synapse2,
+        .type = keyboard
+    },
+    {
+        .shortName = "anansi",
+        .fullName = "Razer Anansi",
+        .usbId = 0x0,
+        .synapse = synapse2,
+        .type = keyboard
+    },
+    {
+        .shortName = "nostromo",
+        .fullName = "Razer Nostromo",
+        .usbId = 0x0,
+        .synapse = synapse2,
+        .type = keyboard
+    },
+    //  ...
+    {
+        .shortName = "huntsman_elite_hw",
+        .fullName = "Razer Huntsman Elite",
+        .usbId = 0x0226,
+        .synapse = synapse2,
+        .type = keyboard
+    },
+};
+
+razer_device __DQ_DEVICES_SYNAPSE_3[] = {
     {
         .shortName = "hyperflux",
         .fullName = "Razer Mamba Hyperflux",
@@ -50,14 +101,7 @@ razer_device __DQ_DEVICES[] = {
         .type = misc_hyperflux
     },
     {
-        .shortName = "manowar",
-        .fullName = "Razer ManO' War",
-        .usbId = 0x0A02,
-        .synapse = synapse2,
-        .type = headphones
-    },
-    {
-        .shortName = "huntsman_elite",
+        .shortName = "huntsman_elite_sw",
         .fullName = "Razer Huntsman Elite",
         .usbId = 0x0226,
         .synapse = synapse3,
@@ -69,7 +113,11 @@ razer_device __DQ_DEVICES[] = {
         .usbId = 0x0F08,
         .synapse = synapse3,
         .type = misc_basestation
-    }
+    },
+};
+
+razer_device __DQ_DEVICES[] = {
+    
 };
 
 razer_device_r dq_get_device_list() {
@@ -98,7 +146,7 @@ bool dq_check_device_connected(int device_id) {
     /* set up a matching dictionary for the class */
     matchingDict = IOServiceMatching(kIOUSBDeviceClassName);
     if (matchingDict == NULL) {
-        return NULL; // fail
+        return NULL;
     }
     
     /* Now we have a dictionary, get an iterator.*/
@@ -123,11 +171,8 @@ bool dq_check_device_connected(int device_id) {
         
         //Don’t need the device object after intermediate plug-in is created
         kr = IOObjectRelease(usbDevice);
-        if ((kIOReturnSuccess != kr) || !plugInInterface) {
-            printf("Unable to create a plug-in (%08x)\n", kr);
+        if ((kIOReturnSuccess != kr) || !plugInInterface)
             continue;
-            
-        }
         
         //Now create the device interface
         result = (*plugInInterface)->QueryInterface(plugInInterface, CFUUIDGetUUIDBytes(kIOUSBDeviceInterfaceID650), (LPVOID *)&dev);
@@ -135,11 +180,8 @@ bool dq_check_device_connected(int device_id) {
         //Don’t need the intermediate plug-in after device interface is created
         (*plugInInterface)->Release(plugInInterface);
         
-        if (result || !dev) {
-            printf("Couldn’t create a device interface (%08x)\n",
-                   (int) result);
+        if (result || !dev)
             continue;
-        }
         
         //Check these values for confirmation
         kr = (*dev)->GetDeviceVendor(dev, &vendor);
@@ -194,11 +236,8 @@ IOUSBDeviceInterface** dq_get_device(int device_id) {
         
         //Don’t need the device object after intermediate plug-in is created
         kr = IOObjectRelease(usbDevice);
-        if ((kIOReturnSuccess != kr) || !plugInInterface) {
-            printf("Unable to create a plug-in (%08x)\n", kr);
+        if ((kIOReturnSuccess != kr) || !plugInInterface)
             continue;
-            
-        }
         
         //Now create the device interface
         result = (*plugInInterface)->QueryInterface(plugInInterface, CFUUIDGetUUIDBytes(kIOUSBDeviceInterfaceID650), (LPVOID *)&dev);
@@ -206,12 +245,8 @@ IOUSBDeviceInterface** dq_get_device(int device_id) {
         //Don’t need the intermediate plug-in after device interface is created
         (*plugInInterface)->Release(plugInInterface);
         
-        if (result || !dev) {
-            printf("Couldn’t create a device interface (%08x)\n",
-                   (int) result);
+        if (result || !dev)
             continue;
-            
-        }
         
         //Check these values for confirmation
         kr = (*dev)->GetDeviceVendor(dev, &vendor);
@@ -227,7 +262,6 @@ IOUSBDeviceInterface** dq_get_device(int device_id) {
         //Open the device to change its state
         kr = (*dev)->USBDeviceOpen(dev);
         if (kr != kIOReturnSuccess)  {
-            printf("Unable to open device: %08x\n", kr);
             (void) (*dev)->Release(dev);
             continue;
         }

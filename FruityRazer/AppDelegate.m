@@ -38,8 +38,8 @@
 #import "FRHyperflux.h"
 #import "FRKeyboard.h"
 
-#define RAZER_DIRECTION_LEFT   0x31
-#define RAZER_DIRECTION_RIGHT  0x32
+#define RAZER_DIRECTION_LEFT   0x32
+#define RAZER_DIRECTION_RIGHT  0x31
 
 @implementation AppDelegate
 
@@ -61,11 +61,9 @@
 }
 
 - (void)handleSynapse2ReadWithDevice:(razer_device)device error:(NSError **)error {
-#warning TODO: This!
-    
     IOUSBDeviceInterface **dev = dq_get_device(device.usbId);
     
-    
+    //  TODO: This should read data from a synapse2 device and return it.
     
     dq_close_device(dev);
 }
@@ -74,6 +72,8 @@
     IOUSBDeviceInterface **dev = dq_get_device(device.usbId);
     
     NSDictionary *data = request.body;
+    
+    razer_set_device_mode(dev, 0x00, 0x00);
     
     if (data[@"type"]) {
         if ([data[@"type"] isEqual:@"wave"]) {
@@ -84,12 +84,7 @@
             
             razer_attr_write_mode_wave(dev, &direction, 1);
         } else if ([data[@"type"] isEqual:@"spectrum"]) {
-            char direction = RAZER_DIRECTION_LEFT;
-            
-            if ([data[@"direction"] isEqual:@"right"])
-                direction = RAZER_DIRECTION_RIGHT;
-            
-            razer_attr_write_mode_spectrum(dev, &direction, 1);
+            razer_attr_write_mode_spectrum(dev);
         } else if ([data[@"type"] isEqual:@"reactive"]) {
             UInt8 speed = [data[@"speed"] intValue];
             
@@ -127,6 +122,10 @@
             }
             
             free(c);
+        } else if ([data[@"type"] isEqual:@"brightness"]) {
+            //  TODO: Figure out how to set brightness.
+            
+            //  razer_attr_write_set_brightness(dev, "", 1);
         }
     }
     
@@ -294,8 +293,11 @@
                 
                 if (d.synapse != synapse2)
                     [self handleSynapse2ReadWithDevice:d error:&error];
-                else
+                else {
                     [response sendData:[NSJSONSerialization dataWithJSONObject:@{@"success": @false, @"error": @"NOT_SUPPORTED"} options:0 error:nil]];
+                    
+                    break;
+                }
                 
                 if (error)
                     [response sendData:[self createErrorResponseFromError:error]];
