@@ -3,22 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EE5B7606271A3D69D3D4F67 /* Pods_FruityServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB485A9C5157AB993070C0 /* Pods_FruityServer.framework */; };
 		A0ADA4AE244D2A0200FEAA12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ADA4AD244D2A0200FEAA12 /* AppDelegate.swift */; };
-		A0ADA4B0244D2A0300FEAA12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0ADA4AF244D2A0300FEAA12 /* Assets.xcassets */; };
-		A0ADA4B3244D2A0300FEAA12 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0ADA4B1244D2A0300FEAA12 /* MainMenu.xib */; };
+		A0ADA4BC244D2AEF00FEAA12 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ADA4BB244D2AEF00FEAA12 /* main.swift */; };
+		A0ADA4C3244D384200FEAA12 /* FruityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0ADA4BD244D2CE100FEAA12 /* FruityKit.framework */; };
+		A0ADA4C4244D384200FEAA12 /* FruityKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0ADA4BD244D2CE100FEAA12 /* FruityKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A0ADA4C5244D384200FEAA12 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A0ADA4C4244D384200FEAA12 /* FruityKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		12A50794AC9E94261D1EC461 /* Pods-FruityServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruityServer.debug.xcconfig"; path = "Target Support Files/Pods-FruityServer/Pods-FruityServer.debug.xcconfig"; sourceTree = "<group>"; };
 		A0ADA4AA244D2A0200FEAA12 /* FruityServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruityServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0ADA4AD244D2A0200FEAA12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0ADA4AF244D2A0300FEAA12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A0ADA4B2244D2A0300FEAA12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A0ADA4B4244D2A0300FEAA12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0ADA4B5244D2A0300FEAA12 /* FruityServer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FruityServer.entitlements; sourceTree = "<group>"; };
+		A0ADA4BB244D2AEF00FEAA12 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A0ADA4BD244D2CE100FEAA12 /* FruityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FruityKit.framework; path = Carthage/Build/Mac/FruityKit.framework; sourceTree = "<group>"; };
+		A7CB485A9C5157AB993070C0 /* Pods_FruityServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FruityServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB5710DAD3169C775CB0C9FD /* Pods-FruityServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruityServer.release.xcconfig"; path = "Target Support Files/Pods-FruityServer/Pods-FruityServer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +45,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0ADA4C3244D384200FEAA12 /* FruityKit.framework in Frameworks */,
+				1EE5B7606271A3D69D3D4F67 /* Pods_FruityServer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A6B9BB99C3DC0E802E80A13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0ADA4BD244D2CE100FEAA12 /* FruityKit.framework */,
+				A7CB485A9C5157AB993070C0 /* Pods_FruityServer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4174031BFC24E2607E37FB70 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				12A50794AC9E94261D1EC461 /* Pods-FruityServer.debug.xcconfig */,
+				AB5710DAD3169C775CB0C9FD /* Pods-FruityServer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A0ADA4A1244D2A0200FEAA12 = {
 			isa = PBXGroup;
 			children = (
 				A0ADA4AC244D2A0200FEAA12 /* FruityServer */,
 				A0ADA4AB244D2A0200FEAA12 /* Products */,
+				4174031BFC24E2607E37FB70 /* Pods */,
+				3A6B9BB99C3DC0E802E80A13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,8 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				A0ADA4AD244D2A0200FEAA12 /* AppDelegate.swift */,
-				A0ADA4AF244D2A0300FEAA12 /* Assets.xcassets */,
-				A0ADA4B1244D2A0300FEAA12 /* MainMenu.xib */,
+				A0ADA4BB244D2AEF00FEAA12 /* main.swift */,
 				A0ADA4B4244D2A0300FEAA12 /* Info.plist */,
 				A0ADA4B5244D2A0300FEAA12 /* FruityServer.entitlements */,
 			);
@@ -67,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0ADA4B8244D2A0300FEAA12 /* Build configuration list for PBXNativeTarget "FruityServer" */;
 			buildPhases = (
+				B0462217ED83CEFFAF035F29 /* [CP] Check Pods Manifest.lock */,
 				A0ADA4A6244D2A0200FEAA12 /* Sources */,
 				A0ADA4A7244D2A0200FEAA12 /* Frameworks */,
 				A0ADA4A8244D2A0200FEAA12 /* Resources */,
+				FBEB74DF891BE7A43697AB0F /* [CP] Embed Pods Frameworks */,
+				A0ADA4C5244D384200FEAA12 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -118,34 +161,64 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0ADA4B0244D2A0300FEAA12 /* Assets.xcassets in Resources */,
-				A0ADA4B3244D2A0300FEAA12 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B0462217ED83CEFFAF035F29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FruityServer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBEB74DF891BE7A43697AB0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FruityServer/Pods-FruityServer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FruityServer/Pods-FruityServer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FruityServer/Pods-FruityServer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A0ADA4A6244D2A0200FEAA12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0ADA4BC244D2AEF00FEAA12 /* main.swift in Sources */,
 				A0ADA4AE244D2A0200FEAA12 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		A0ADA4B1244D2A0300FEAA12 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A0ADA4B2244D2A0300FEAA12 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A0ADA4B6244D2A0300FEAA12 /* Debug */ = {
@@ -263,19 +336,26 @@
 		};
 		A0ADA4B9244D2A0300FEAA12 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12A50794AC9E94261D1EC461 /* Pods-FruityServer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FruityServer/FruityServer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = FruityServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.edr.FruityServer;
+				MARKETING_VERSION = 0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityrazer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -283,19 +363,26 @@
 		};
 		A0ADA4BA244D2A0300FEAA12 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB5710DAD3169C775CB0C9FD /* Pods-FruityServer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FruityServer/FruityServer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = FruityServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.edr.FruityServer;
+				MARKETING_VERSION = 0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityrazer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
