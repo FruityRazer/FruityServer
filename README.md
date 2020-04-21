@@ -1,3 +1,9 @@
+This project is only relevant to you if you want to change FruityRazer's core code.
+
+If you just want to use the driver, check out [FruityUI](https://github.com/FruityRazer/FruityUI).
+
+---
+
 # FruityServer
 
 Example implementation of an app using FruityKit.
