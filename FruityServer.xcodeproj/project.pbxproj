@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1EE5B7606271A3D69D3D4F67 /* Pods_FruityServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CB485A9C5157AB993070C0 /* Pods_FruityServer.framework */; };
+		A08DB386244F74CF000534F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A08DB385244F74CF000534F2 /* Assets.xcassets */; };
 		A0ADA4AE244D2A0200FEAA12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ADA4AD244D2A0200FEAA12 /* AppDelegate.swift */; };
 		A0ADA4BC244D2AEF00FEAA12 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0ADA4BB244D2AEF00FEAA12 /* main.swift */; };
 		A0ADA4C3244D384200FEAA12 /* FruityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0ADA4BD244D2CE100FEAA12 /* FruityKit.framework */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		12A50794AC9E94261D1EC461 /* Pods-FruityServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruityServer.debug.xcconfig"; path = "Target Support Files/Pods-FruityServer/Pods-FruityServer.debug.xcconfig"; sourceTree = "<group>"; };
+		A08DB385244F74CF000534F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0ADA4AA244D2A0200FEAA12 /* FruityServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruityServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0ADA4AD244D2A0200FEAA12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0ADA4B4244D2A0300FEAA12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				A0ADA4BB244D2AEF00FEAA12 /* main.swift */,
 				A0ADA4B4244D2A0300FEAA12 /* Info.plist */,
 				A0ADA4B5244D2A0300FEAA12 /* FruityServer.entitlements */,
+				A08DB385244F74CF000534F2 /* Assets.xcassets */,
 			);
 			path = FruityServer;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08DB386244F74CF000534F2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +358,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityrazer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,6 +386,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityrazer;
 				PRODUCT_NAME = "$(TARGET_NAME)";

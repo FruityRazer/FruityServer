@@ -196,7 +196,7 @@ class AppDelegate: NSObject, CRApplicationDelegate, CRServerDelegate {
                 ]
             }
             
-            if let json = try? JSONSerialization.data(withJSONObject: deviceMap, options: .prettyPrinted) {
+            if let json = try? JSONSerialization.data(withJSONObject: ["devices": deviceMap], options: .prettyPrinted) {
                 response.send(json)
             } else {
                 response.send(self.createErrorResponse(with: nil))
