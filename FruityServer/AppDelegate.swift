@@ -93,10 +93,10 @@ class AppDelegate: NSObject, CRApplicationDelegate, CRServerDelegate {
                 direction = .right
             }
             
-            handle.write(mode: .wave(direction: direction))
+            _ = handle.write(mode: .wave(direction: direction))
             
         case "spectrum":
-            handle.write(mode: .spectrum)
+            _ = handle.write(mode: .spectrum)
             
         case "reactive":
             guard let speedStr = body["speed"] as? String, let speed = Int(speedStr) else {
@@ -107,21 +107,21 @@ class AppDelegate: NSObject, CRApplicationDelegate, CRServerDelegate {
                 throw RequestError.invalidData
             }
             
-            handle.write(mode: .reactive(speed: speed, color: color))
+            _ = handle.write(mode: .reactive(speed: speed, color: color))
             
         case "static":
             guard let colorStr = body["color"] as? String, let color = try? Color(hex: colorStr) else {
                 throw RequestError.invalidData
             }
             
-            handle.write(mode: .static(color: color))
+            _ = handle.write(mode: .static(color: color))
             
         case "breath":
             guard let colorStr = body["color"] as? String, let color = try? Color(hex: colorStr) else {
                 throw RequestError.invalidData
             }
             
-            handle.write(mode: .breath(color: color))
+            _ = handle.write(mode: .breath(color: color))
             
         case "brightness":
             throw RequestError.modeNotImplemented
@@ -144,11 +144,11 @@ class AppDelegate: NSObject, CRApplicationDelegate, CRServerDelegate {
             if let parts = body["parts"] as? [String] {
                 let colors = try parts.map { try Color(hex: $0) }
                 
-                handle.write(mode: .raw(colors: colors))
+                _ = handle.write(mode: .raw(colors: colors))
             } else if let rows = body["rows"] as? [[String]] {
                 let colors = try rows.map { try $0.map { try Color(hex: $0) } }
                 
-                handle.write(mode: .rawRows(colors: colors))
+                _ = handle.write(mode: .rawRows(colors: colors))
             }
         } catch {
             throw RequestError.invalidData
